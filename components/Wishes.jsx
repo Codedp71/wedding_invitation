@@ -12,36 +12,45 @@ export default function Wishes() {
   const [message, setMessage] = useState('');
   const [wishes, setWishes] = useState(DEFAULT_WISHES);
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
-  // Load saved wishes from localStorage on client mount
+  // Fetch live wishes from global cloud database on mount
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem('wedding_wishes');
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          setWishes(parsed);
+    fetch('/api/wishes')
+      .then((res) => res.json())
+      .then((data) => {
+        if (data?.wishes && Array.isArray(data.wishes)) {
+          setWishes(data.wishes);
         }
-      }
-    } catch (e) {
-      console.error(e);
-    }
+      })
+      .catch(() => {});
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (name.trim() && message.trim()) {
-      const newWish = { id: Date.now(), name: name.trim(), message: message.trim() };
-      const updatedWishes = [newWish, ...wishes];
-      setWishes(updatedWishes);
-      
-      // Save permanently in browser storage
-      try {
-        localStorage.setItem('wedding_wishes', JSON.stringify(updatedWishes));
-      } catch (e) {
-        console.error(e);
-      }
+    if (!name.trim() || !message.trim() || submitting) return;
 
+    setSubmitting(true);
+
+    try {
+      const res = await fetch('/api/wishes', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: name.trim(), message: message.trim() }),
+      });
+
+      const data = await res.json();
+      if (data?.wishes) {
+        setWishes(data.wishes);
+      } else {
+        const newWish = { id: Date.now(), name: name.trim(), message: message.trim() };
+        setWishes([newWish, ...wishes]);
+      }
+    } catch (err) {
+      const newWish = { id: Date.now(), name: name.trim(), message: message.trim() };
+      setWishes([newWish, ...wishes]);
+    } finally {
+      setSubmitting(false);
       setSent(true);
       setName('');
       setMessage('');
@@ -88,9 +97,9 @@ export default function Wishes() {
               />
             </div>
 
-            <button type="submit" className={styles.submitBtn}>
+            <button type="submit" className={styles.submitBtn} disabled={submitting}>
               <span className={styles.flowerIcon}>🌸</span>
-              <span className={styles.sendIcon}>➢</span> SEND WISH
+              <span className={styles.sendIcon}>➢</span> {submitting ? 'SENDING...' : 'SEND WISH'}
             </button>
           </form>
         )}
