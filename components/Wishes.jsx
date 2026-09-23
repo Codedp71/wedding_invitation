@@ -1,21 +1,47 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './Wishes.module.css';
+
+const DEFAULT_WISHES = [
+  { id: 1, name: 'Aarav Sharma', message: 'Wishing you both a lifetime of love and happiness!' },
+  { id: 2, name: 'Priya Patel', message: 'So excited to celebrate your special day. Congratulations!' }
+];
 
 export default function Wishes() {
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
-  const [wishes, setWishes] = useState([
-    { id: 1, name: 'Aarav Sharma', message: 'Wishing you both a lifetime of love and happiness!' },
-    { id: 2, name: 'Priya Patel', message: 'So excited to celebrate your special day. Congratulations!' }
-  ]);
+  const [wishes, setWishes] = useState(DEFAULT_WISHES);
   const [sent, setSent] = useState(false);
+
+  // Load saved wishes from localStorage on client mount
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('wedding_wishes');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          setWishes(parsed);
+        }
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (name.trim() && message.trim()) {
-      const newWish = { id: Date.now(), name, message };
-      setWishes([newWish, ...wishes]);
+      const newWish = { id: Date.now(), name: name.trim(), message: message.trim() };
+      const updatedWishes = [newWish, ...wishes];
+      setWishes(updatedWishes);
+      
+      // Save permanently in browser storage
+      try {
+        localStorage.setItem('wedding_wishes', JSON.stringify(updatedWishes));
+      } catch (e) {
+        console.error(e);
+      }
+
       setSent(true);
       setName('');
       setMessage('');
