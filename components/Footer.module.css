@@ -1,0 +1,22 @@
+.footer {
+  padding: 80px 24px 40px;
+  background: #2C4C3B;
+  color: #F6F9F4;
+}
+.tagline {
+  font-style: italic;
+  color: var(--color-ivory);
+  opacity: 0.7;
+  font-size: 1.05rem;
+}
+.date {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  letter-spacing: 3px;
+  opacity: 0.6;
+}
+.madeWith {
+  margin-top: 32px;
+  font-size: 0.85rem;
+  opacity: 0.4;
+}

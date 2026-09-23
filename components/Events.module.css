@@ -1,0 +1,48 @@
+.section { background: var(--color-cream); }
+.grid {
+  display: flex; flex-direction: column;
+  gap: 40px; max-width: 700px; margin: 0 auto;
+}
+.card {
+  background: var(--color-ivory);
+  border: 1px solid var(--color-gold-border);
+  border-radius: 16px;
+  padding: 48px 32px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+  transition: transform 0.3s ease;
+}
+.card:hover { transform: translateY(-3px); }
+.icon {
+  margin: 0 auto 20px;
+  width: 80px; height: 80px;
+  display: flex; align-items: center; justify-content: center;
+}
+.title {
+  font-size: 2rem;
+  color: var(--color-maroon);
+  margin-bottom: 8px;
+}
+.date {
+  font-family: var(--font-heading);
+  color: var(--color-gold);
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+.time {
+  font-size: 0.95rem;
+  color: var(--color-brown);
+  opacity: 0.8;
+  margin-top: 4px;
+}
+.extra {
+  font-size: 0.9rem;
+  color: var(--color-rose);
+  margin-top: 4px;
+}
+.venue {
+  font-size: 0.9rem;
+  color: var(--color-brown);
+  opacity: 0.7;
+  line-height: 1.6;
+}

@@ -1,0 +1,150 @@
+.coverOverlay {
+  position: fixed; inset: 0;
+  z-index: 1000;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+/* Left & Right Sliding Doors */
+.doorLeft, .doorRight {
+  position: absolute; top: 0; bottom: 0;
+  width: 50.5%;
+  z-index: 1;
+  transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+  overflow: hidden;
+  box-shadow: 0 0 35px rgba(0,0,0,0.3);
+}
+
+.doorLeft {
+  left: 0;
+}
+.doorRight {
+  right: 0;
+}
+
+.doorBgLeft {
+  position: absolute; top: 0; bottom: 0; left: 0;
+  width: 100vw;
+  background: url('/photos/background_starting.png') center/cover no-repeat;
+}
+
+.doorBgRight {
+  position: absolute; top: 0; bottom: 0; left: -50vw;
+  width: 100vw;
+  background: url('/photos/background_starting.png') center/cover no-repeat;
+}
+
+/* Gold border trims on door meeting edges */
+.doorBorderRight {
+  position: absolute; top: 0; bottom: 0; right: 0; width: 3px;
+  background: linear-gradient(180deg, rgba(200,164,93,0.3), rgba(200,164,93,0.9), rgba(200,164,93,0.3));
+  box-shadow: 0 0 12px rgba(200,164,93,0.6);
+}
+
+.doorBorderLeft {
+  position: absolute; top: 0; bottom: 0; left: 0; width: 3px;
+  background: linear-gradient(180deg, rgba(200,164,93,0.3), rgba(200,164,93,0.9), rgba(200,164,93,0.3));
+  box-shadow: 0 0 12px rgba(200,164,93,0.6);
+}
+
+/* Center Content */
+.centerContent {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 24px;
+  transition: opacity 0.5s ease, transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.mandala {
+  position: absolute;
+  opacity: 0.25;
+  animation: spin 80s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Wax Seal */
+.seal {
+  position: relative; z-index: 2;
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #f0d4d4, #d4a3a3 60%, #b87e7e);
+  box-shadow: inset 0 2px 8px rgba(255,255,255,0.4),
+              inset -3px -3px 10px rgba(0,0,0,0.15),
+              0 8px 20px rgba(0,0,0,0.12);
+  display: flex; align-items: center; justify-content: center;
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+.sealInner {
+  width: 130px; height: 130px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(200,164,93,0.4);
+  background: radial-gradient(circle, #ecc4c4, #d4a3a3);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 0;
+}
+.sealName {
+  font-size: 1.7rem; line-height: 1;
+  color: #8B6914;
+  text-shadow: 0 1px 1px rgba(255,255,255,0.3);
+}
+.sealAmp {
+  font-size: 1rem; color: #8B6914; opacity: 0.7;
+  margin: -2px 0;
+}
+
+/* Tap Button */
+.tapBtn {
+  position: relative; z-index: 2;
+  margin-top: 16px;
+  background: rgba(255,255,255,0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--color-gold-border);
+  color: var(--color-maroon);
+  padding: 14px 40px;
+  font-size: 0.85rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 5px;
+  border-radius: 40px;
+  cursor: pointer;
+  display: flex; align-items: center; gap: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(200,164,93,0.25);
+}
+.tapBtn:hover {
+  background: rgba(255,255,255,0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(200,164,93,0.45);
+}
+.sparkle {
+  font-size: 0.6rem; color: var(--color-gold);
+}
+
+/* Door Opening Animation */
+.coverOverlay.opening .doorLeft {
+  transform: translateX(-100%);
+}
+
+.coverOverlay.opening .doorRight {
+  transform: translateX(100%);
+}
+
+.coverOverlay.opening .centerContent {
+  opacity: 0;
+  transform: scale(1.15);
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .seal { width: 130px; height: 130px; }
+  .sealInner { width: 105px; height: 105px; }
+  .sealName { font-size: 1.4rem; }
+  .tapBtn { padding: 12px 28px; font-size: 0.75rem; }
+}

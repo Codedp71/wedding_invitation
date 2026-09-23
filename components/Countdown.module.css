@@ -1,0 +1,252 @@
+.section { background: var(--color-ivory); }
+.grid {
+  display: flex; justify-content: center; gap: 32px;
+  flex-wrap: wrap;
+}
+.unit {
+  display: flex; flex-direction: column; align-items: center;
+  min-width: 100px;
+}
+.number {
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  font-weight: 300;
+  color: var(--color-maroon);
+  line-height: 1;
+}
+.label {
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-top: 8px;
+}
+
+/* Dhol Animation */
+.dholContainer {
+  position: relative;
+  width: 160px;
+  height: 120px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dholDrum {
+  position: relative;
+  z-index: 2;
+  animation: drumBounce 1s infinite alternate;
+}
+.stickLeft {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  z-index: 3;
+  transform-origin: top right;
+  animation: tapLeft 0.5s infinite alternate;
+}
+.stickRight {
+  position: absolute;
+  top: -10px;
+  right: 0;
+  z-index: 3;
+  transform-origin: top left;
+  animation: tapRight 0.5s infinite alternate 0.25s;
+}
+
+@keyframes drumBounce {
+  0% { transform: scale(1) translateY(0); }
+  100% { transform: scale(1.02) translateY(2px); }
+}
+@keyframes tapLeft {
+  0% { transform: rotate(-20deg) translateY(-10px); }
+  100% { transform: rotate(15deg) translateY(5px); }
+}
+@keyframes tapRight {
+  0% { transform: rotate(20deg) translateY(-10px); }
+  100% { transform: rotate(-15deg) translateY(5px); }
+}
+
+/* Hands Frame Animation Styles */
+.revealWrapper {
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  min-height: 300px;
+  cursor: pointer;
+}
+.frameContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  max-width: 1200px;
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 20px;
+}
+.handFrame {
+  object-fit: cover;
+  object-position: center;
+  mix-blend-mode: multiply; /* Removes the white/beige background of the video */
+  width: 100%;
+  height: 100%;
+}
+.shubhVivah {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: #C4A77D;
+  display: block;
+  margin-bottom: 10px;
+}
+.tapText {
+  margin-top: 10px;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--color-maroon);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: opacity 0.5s ease;
+  animation: pulseText 2s infinite;
+}
+@keyframes pulseText {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+.fadeOut {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Save Date Box Styles */
+.revealedContent {
+  display: flex; flex-direction: column; align-items: center; gap: 40px;
+  animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.9) translateY(20px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+.saveDateBox {
+  background: #FDF9F1;
+  border: 1px solid #EEDCBD;
+  border-radius: 16px;
+  padding: 32px 64px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  display: inline-block;
+}
+.saveDateLabel {
+  font-size: 0.9rem;
+  letter-spacing: 4px;
+  color: #8DA393;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+/* Party Celebration Animations */
+.partySection {
+  position: relative;
+  overflow: hidden;
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.confettiContainer {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 10;
+  overflow: hidden;
+}
+
+/* Central Burst Explosion */
+.burstContainer {
+  position: absolute;
+  top: 40%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 12;
+}
+
+.burstPiece {
+  position: absolute;
+  border-radius: 50%;
+  animation: burstOut 0.9s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+  box-shadow: 0 0 8px currentColor;
+}
+
+@keyframes burstOut {
+  0% {
+    transform: translate(0, 0) scale(0.2);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--burst-x), var(--burst-y)) scale(1.3);
+    opacity: 0;
+  }
+}
+
+/* Fluttering Falling Confetti */
+.confetti {
+  position: absolute;
+  top: -30px;
+  opacity: 0;
+  animation: fallConfetti 4.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.confettiIcon {
+  line-height: 1;
+  display: inline-block;
+  animation: spinIcon 3s linear infinite;
+}
+
+@keyframes spinIcon {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fallConfetti {
+  0% {
+    transform: translateY(-20px) translateX(0) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  40% {
+    transform: translateY(35vh) translateX(30px) rotateX(200deg) rotateY(300deg) rotateZ(140deg);
+  }
+  70% {
+    transform: translateY(70vh) translateX(-25px) rotateX(420deg) rotateY(580deg) rotateZ(280deg);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateY(115vh) translateX(35px) rotateX(720deg) rotateY(1080deg) rotateZ(360deg);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid { gap: 12px; }
+  .unitBox { min-width: 75px; height: 90px; }
+  .number { font-size: 1.8rem; }
+  .saveDateBox { padding: 24px 32px; }
+}
+
+@media (max-width: 480px) {
+  .grid { gap: 20px; }
+  .number { font-size: 2.8rem; }
+  .unitBox { min-width: 80px; height: 90px; }
+  .label { font-size: 0.75rem; }
+  .frameContainer { height: 220px; }
+  .saveDateBox { padding: 24px 32px; }
+}

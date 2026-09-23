@@ -1,0 +1,160 @@
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 80px 24px;
+  /* Premium card background with sides and center glow */
+  background: url('/photos/background.jpeg') center/cover no-repeat;
+}
+
+/* Scenery */
+.scenery { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+.watercolorBg {
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 45%, rgba(255, 252, 245, 0.8) 0%, rgba(255, 245, 235, 0.35) 60%, rgba(0, 0, 0, 0.08) 100%);
+}
+
+/* Temple Pillars / Borders */
+.pillarLeft, .pillarRight {
+  display: none;
+}
+.pillarLeft::before, .pillarRight::before {
+  content: '';
+  position: absolute; top: 0; bottom: 0; left: 5px; right: 5px;
+  background-image: repeating-linear-gradient(0deg, transparent, transparent 80px, rgba(0,0,0,0.1) 80px, rgba(0,0,0,0.1) 82px);
+}
+.pillarLeft { left: 0; }
+.pillarRight { right: 0; transform: scaleX(-1); box-shadow: -10px 0 20px rgba(0,0,0,0.15); }
+
+.treeLeft {
+  position: absolute; left: 30px; bottom: 0;
+  opacity: 0.9;
+  z-index: 2;
+}
+.treeRight {
+  position: absolute; right: 30px; bottom: 0;
+  opacity: 0.9;
+  transform: scaleX(-1);
+  z-index: 2;
+}
+.lotusLeft {
+  position: absolute; left: 12%; bottom: 8%;
+  animation: float 4s ease-in-out infinite;
+  z-index: 3;
+}
+.lotusRight {
+  position: absolute; right: 12%; bottom: 12%;
+  animation: float 5s ease-in-out infinite 1s;
+  z-index: 3;
+}
+.lotusCenter {
+  position: absolute; left: 50%; bottom: 4%;
+  transform: translateX(-50%);
+  animation: float 6s ease-in-out infinite 0.5s;
+  z-index: 3;
+}
+
+/* Floating petals */
+.petals { position: absolute; inset: 0; pointer-events: none; z-index: 1; overflow: hidden; }
+.petal {
+  position: absolute; top: -20px;
+  animation: fallPetal linear infinite;
+  opacity: 0.6;
+}
+@keyframes fallPetal {
+  0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.7; }
+  90% { opacity: 0.5; }
+  100% { transform: translateY(105vh) rotate(360deg); opacity: 0; }
+}
+
+/* Ganesha Image */
+.ganeshaWrapper {
+  position: relative; z-index: 2;
+  margin: 0 auto 20px;
+  width: 110px; height: 110px;
+  display: flex; justify-content: center; align-items: center;
+  animation: float 5s ease-in-out infinite;
+}
+.ganeshaImg {
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--color-gold);
+  box-shadow: 0 8px 24px rgba(200, 164, 93, 0.35), 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+.mandala {
+  position: absolute;
+  opacity: 0.12;
+  animation: slowSpin 80s linear infinite;
+  z-index: 0;
+}
+
+.content {
+  position: relative; 
+  z-index: 2; 
+  max-width: 620px; 
+  padding: 36px 28px;
+  background: rgba(255, 253, 248, 0.84);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(200, 164, 93, 0.4);
+  border-radius: 28px;
+  box-shadow: 0 16px 45px rgba(44, 76, 59, 0.08), 0 0 25px rgba(255, 255, 255, 0.6);
+}
+
+.blessing {
+  font-size: 1.4rem;
+  color: #C4A77D;
+  letter-spacing: normal;
+  margin-bottom: 16px;
+}
+.subBlessing {
+  font-size: 1.05rem;
+  color: #79665A;
+  opacity: 0.85;
+  max-width: 480px;
+  margin: 0 auto 24px;
+  line-height: 1.7;
+}
+.names {
+  font-size: 5rem;
+  color: var(--color-maroon);
+  line-height: 1.1;
+  margin: 16px 0;
+}
+.amp {
+  font-size: 2.5rem;
+  color: var(--color-gold);
+  display: block;
+  margin: 4px 0;
+}
+.tagline {
+  font-style: italic;
+  color: var(--color-rose);
+  font-size: 1.15rem;
+  margin: 8px 0 0;
+}
+.date {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  letter-spacing: 4px;
+  color: var(--color-maroon);
+  margin-top: 8px;
+}
+.venue {
+  font-size: 0.95rem;
+  color: var(--color-brown);
+  opacity: 0.6;
+  letter-spacing: 2px;
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .names { font-size: 3.2rem; }
+  .hero { min-height: 90vh; padding: 60px 16px; }
+  .treeLeft, .treeRight { opacity: 0.4; }
+}

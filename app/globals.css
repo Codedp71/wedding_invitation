@@ -1,0 +1,135 @@
+/* ===== PREMIUM INDIAN WEDDING — DESIGN SYSTEM ===== */
+/* Color palette inspired by the Pastel Floral wedding card */
+
+:root {
+  --color-maroon: #2C4C3B;       /* Muted dark green — primary typography */
+  --color-gold: #C8A45D;          /* Antique gold — accents, dividers */
+  --color-ivory: #F6F9F4;         /* Soft ivory-green — main background */
+  --color-brown: #3A4A3F;         /* Deep green-brown — body text */
+  --color-rose: #D4868E;          /* Muted rose/pink — watercolor accent */
+  --color-cream: #EBF0E8;         /* Light sage green — section backgrounds */
+  --color-gold-light: rgba(200, 164, 93, 0.12);
+  --color-gold-border: rgba(200, 164, 93, 0.3);
+  --font-display: var(--font-great-vibes), cursive;
+  --font-heading: var(--font-cormorant), serif;
+  --font-body: var(--font-inter), sans-serif;
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-ivory);
+  color: var(--color-brown);
+  overflow-x: hidden;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--color-maroon);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* === UTILITY === */
+.text-center { text-align: center; }
+.font-script { font-family: var(--font-display); font-weight: 400; }
+
+.section-padding {
+  padding: 100px 24px;
+}
+
+/* === GOLD DIVIDER === */
+.gold-divider {
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  margin: 32px auto;
+}
+
+.ornamental-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 40px auto;
+  color: var(--color-gold);
+  opacity: 0.6;
+}
+.ornamental-divider::before,
+.ornamental-divider::after {
+  content: '';
+  width: 60px;
+  height: 1px;
+  background: var(--color-gold);
+}
+
+/* === SCROLL ANIMATIONS === */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes slowSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(200, 164, 93, 0.3); }
+  50% { box-shadow: 0 0 35px rgba(200, 164, 93, 0.6); }
+}
+
+/* === REDUCED MOTION === */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { transition: none; }
+  * { animation-duration: 0.01ms !important; }
+}
+
+/* === HIDE DEV INDICATOR BADGE === */
+nextjs-portal, [data-nextjs-toast], [data-nextjs-dialog-overlay] {
+  display: none !important;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .section-padding { padding: 60px 16px; }
+  h2 { font-size: 2rem !important; }
+}
