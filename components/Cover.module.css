@@ -26,13 +26,13 @@
 .doorBgLeft {
   position: absolute; top: 0; bottom: 0; left: 0;
   width: 100vw;
-  background: url('/photos/background_starting.png') center/cover no-repeat;
+  background: #FAF6EE url('/photos/background_starting.png') center/cover no-repeat;
 }
 
 .doorBgRight {
   position: absolute; top: 0; bottom: 0; left: -50vw;
   width: 100vw;
-  background: url('/photos/background_starting.png') center/cover no-repeat;
+  background: #FAF6EE url('/photos/background_starting.png') center/cover no-repeat;
 }
 
 /* Gold border trims on door meeting edges */

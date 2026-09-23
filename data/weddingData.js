@@ -145,11 +145,11 @@ Our story is still being written. And the best chapter is yet to come. ❤️`,
   },
 
   gallery: [
-    { src: '/photos/moment 3.jpeg', caption: 'Cherished moments together ❤️' },
+    { src: '/photos/moments.jpeg', caption: 'Just us being weirdos 🤪' },
     { src: '/photos/moment 5.jpeg', caption: 'Making memories 🌹' },
     { src: '/photos/combination.jpeg', caption: 'Perfect combination (chaos & calm) 🤣' },
-    { src: '/photos/moments.jpeg', caption: 'Eye contact practice going well 👀' },
-    { src: '/photos/moments2.jpeg', caption: 'Just us being weirdos 🤪' },
+    { src: '/photos/moment 3.jpeg', caption: 'Cherished moments together 💕' },
+    { src: '/photos/moments2.jpeg', caption: 'Eye contact practice going well 👀' },
     { src: '/photos/proposal.jpeg', caption: 'The final surrender! 🙋‍♂️💍' },
   ],
 
