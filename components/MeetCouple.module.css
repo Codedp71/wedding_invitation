@@ -45,5 +45,5 @@
 }
 @media (max-width: 768px) {
   .grid { grid-template-columns: 1fr; gap: 28px; }
-  .imgWrap { height: 300px; }
+  .imgWrap { height: 380px; }
 }
