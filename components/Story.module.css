@@ -113,6 +113,16 @@
   margin-bottom: 20px;
 }
 
+.epiloguePhotoWrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.epiloguePhotoWrap .photoFrame {
+  max-width: 380px;
+}
+
 .epilogueBody p {
   font-size: 1.05rem;
   line-height: 1.85;

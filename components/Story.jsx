@@ -46,6 +46,21 @@ export default function Story() {
             <div className={styles.epilogueHeader}>
               <h3>{weddingData.epilogue.title}</h3>
             </div>
+            {weddingData.epilogue.photo && (
+              <div className={styles.epiloguePhotoWrap}>
+                <div className={styles.photoFrame}>
+                  <div className={styles.imgWrap}>
+                    <Image 
+                      src={weddingData.epilogue.photo} 
+                      alt={weddingData.epilogue.title} 
+                      fill 
+                      sizes="(max-width: 768px) 100vw, 420px" 
+                      style={{ objectFit: 'cover', objectPosition: 'center' }} 
+                    />
+                  </div>
+                </div>
+              </div>
+            )}
             <div className={styles.epilogueBody}>
               {weddingData.epilogue.text.split('\n\n').map((paragraph, idx) => (
                 <p key={idx}>{paragraph}</p>

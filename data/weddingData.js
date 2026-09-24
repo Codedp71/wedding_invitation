@@ -6,15 +6,15 @@ const weddingData = {
     groom: 'Pankaj',
     bride: 'Manpreet',
     tagline: 'Two hearts, one beautiful journey.',
-    groomBio: 'An aerospace engineer by profession, a drone enthusiast by passion, and now… A full-time husband under the supervision of Manpreet! 😎😂 He spent years making drones follow commands… Only to discover that in marriage, he is the one receiving the commands. 😂 From flying machines to flying together through life… Pankaj has finally found his perfect co-pilot. ✈️❤️',
-    brideBio: 'She works with surgeons and doctors at Intuitive, where precision is everything and mistakes are not an option. So naturally, when she met Pankaj, she thought… "Finally, a project I can manage." 😂 She didn\'t just say "Yes" to Pankaj… She basically signed up for a lifetime maintenance contract — no warranty, no replacement, and definitely no refund! 😂💍 Ladies and gentlemen… meet the woman who finally grounded the drone guy! 😂❤️',
+    groomBio: 'An aerospace engineer by profession, a drone enthusiast by passion, and now a full-time husband under the supervision of Manpreet! He spent years making drones follow his commands, only to discover that in marriage, he is the one receiving the commands. From flying machines to flying together through life, Pankaj has finally found his perfect co-pilot.',
+    brideBio: 'She works with surgeons and doctors at Intuitive, where precision is everything and mistakes are not an option. So naturally, when she met Pankaj, she thought, “Finally, a project I can manage.” She didn’t just say “Yes” to Pankaj; she basically signed up for a lifetime maintenance contract — no warranty, no replacement, and definitely no refund. Ladies and gentlemen, meet the woman who finally grounded the drone guy.',
     groomPhoto: '/photos/Groom.jpeg',
     bridePhoto: '/photos/bride.jpeg',
     groomObjectPosition: 'center 15%',
     brideObjectPosition: 'center 20%',
   },
 
-  weddingDate: '2026-11-10T07:30:00',
+  weddingDate: '2026-11-10T11:30:00',
 
   events: [
     {
@@ -30,7 +30,7 @@ const weddingData = {
       id: 'wedding',
       title: 'Wedding Ceremony',
       date: '10 November 2026',
-      time: '07:30 AM',
+      time: '11:30 AM',
       extra: '',
       venue: 'The Royal Castle Resort, Una (H.P)',
       icon: 'mandap',
@@ -48,7 +48,7 @@ Two strangers, one table, and a moment neither of us knew would change everythin
 I kept looking into her eyes… while she couldn’t quite maintain eye contact with me. 😄
 
 Of course, we had to discuss that later on WhatsApp — because sometimes the conversations after the meeting say what the eyes couldn't. ❤️`,
-      photo: '/photos/chapter-1.jpeg',
+      photo: '/photos/moments.jpeg',
       fit: 'cover',
       objectPosition: 'top center',
     },
@@ -120,22 +120,11 @@ From that first glance to a forever commitment… what a journey it had already 
       fit: 'cover',
       objectPosition: 'center 15%',
     },
-    {
-      chapter: 'Chapter 7',
-      title: 'Our First Trip Together — Goa 🌊❤️',
-      text: `And then came April 2026… Our first trip together to Goa. 🌴☀️
-
-New places, new memories, endless laughter, beautiful sunsets, and just the two of us creating moments we would one day look back on and smile about.
-
-Because by then, it wasn't about where we were… It was about being together. ❤️`,
-      photo: '/photos/chapter-7.jpeg',
-      fit: 'cover',
-      objectPosition: 'center',
-    },
   ],
 
   epilogue: {
     title: 'And Now… Forever Begins 💍❤️',
+    photo: '/photos/combination.jpeg',
     text: `What started with a café, a little eye contact, a WhatsApp conversation, and one unexpected kiss… became a love story filled with courage, patience, laughter, family blessings, and countless beautiful memories.
 
 From Gurugram to Ahmedabad, from “let’s take a chance” to “let’s spend our lives together”…
