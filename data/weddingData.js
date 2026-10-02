@@ -9,7 +9,7 @@ const weddingData = {
     groomBio: 'An aerospace engineer by profession, a drone enthusiast by passion, and now a full-time husband under the supervision of Manpreet! He spent years making drones follow his commands, only to discover that in marriage, he is the one receiving the commands. From flying machines to flying together through life, Pankaj has finally found his perfect co-pilot.',
     brideBio: 'She works with surgeons and doctors at Intuitive, where precision is everything and mistakes are not an option. So naturally, when she met Pankaj, she thought, “Finally, a project I can manage.” She didn’t just say “Yes” to Pankaj; she basically signed up for a lifetime maintenance contract — no warranty, no replacement, and definitely no refund. Ladies and gentlemen, meet the woman who finally grounded the drone guy.',
     groomPhoto: '/photos/Groom.jpeg',
-    bridePhoto: '/photos/bride.jpeg',
+    bridePhoto: '/photos/IMG-20261001-WA0012.jpg',
     groomObjectPosition: 'center 15%',
     brideObjectPosition: 'center 20%',
   },
@@ -102,7 +102,7 @@ Our dreams, our values, our understanding of life, and most importantly, our vis
 So we decided… why just build a life together someday? Why not start planning it now? ❤️
 
 We spoke to our parents, and with their blessings, our love story took its next beautiful step.`,
-      photo: '/photos/chapter-5.jpeg',
+      photo: '/photos/IMG-20261001-WA0011.jpg',
       fit: 'cover',
       objectPosition: 'center 90%',
     },
