@@ -45,7 +45,7 @@ const weddingData = {
 
 Two strangers, one table, and a moment neither of us knew would change everything.
 
-I kept looking into her eyes… while she couldn’t quite maintain eye contact with me. 😄
+I kept looking into her eyes… while she couldn’t quite maintain eye contact with me. 
 
 Of course, we had to discuss that later on WhatsApp — because sometimes the conversations after the meeting say what the eyes couldn't. ❤️`,
       photo: '/photos/moments.jpeg',
@@ -59,7 +59,7 @@ Of course, we had to discuss that later on WhatsApp — because sometimes the co
 
 And then came the first real step… Manpreet came to Ahmedabad to meet me. ❤️
 
-And somewhere during that meeting, she gave me my first little surprise — a kiss on my cheek. 🥰
+And somewhere during that meeting, she gave me my first little surprise — a Tight Hug. 🥰
 
 A small moment, but one I’ll never forget.`,
       photo: '/photos/chapter-2.jpeg',
@@ -83,7 +83,7 @@ With every meeting, every conversation, every late-night chat, and every little 
       title: 'The Question 💍',
       text: `After our second meeting, I gathered the courage to ask her… “Will you be mine?”
 
-I had my answer ready in my heart. She, however, decided to take her time. 😂❤️
+I had my answer ready in my heart. She, however, decided to take her time. ❤️
 
 And then, while we were together in Leela Gandhinagar and I wrote a letter for her to ask that question, she finally said those words I had been waiting for… “YES.” ❤️
 
