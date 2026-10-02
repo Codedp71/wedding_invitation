@@ -125,7 +125,7 @@ From that first glance to a forever commitment… what a journey it had already 
   epilogue: {
     title: 'And Now… Forever Begins 💍❤️',
     photo: '/photos/combination.jpeg',
-    text: `What started with a café, a little eye contact, a WhatsApp conversation, and one unexpected kiss… became a love story filled with courage, patience, laughter, family blessings, and countless beautiful memories.
+    text: `What started with a café, a little eye contact, a WhatsApp conversation, and one unexpected Hug… became a love story filled with courage, patience, laughter, family blessings, and countless beautiful memories.
 
 From Gurugram to Ahmedabad, from “let’s take a chance” to “let’s spend our lives together”…
 
