@@ -16,7 +16,7 @@ export default function Wishes() {
 
   // Fetch live wishes from global cloud database on mount
   useEffect(() => {
-    fetch('/api/wishes')
+    fetch('/api/wishes', { cache: 'no-store' })
       .then((res) => res.json())
       .then((data) => {
         if (data?.wishes && Array.isArray(data.wishes)) {

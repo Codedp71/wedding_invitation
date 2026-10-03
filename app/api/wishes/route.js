@@ -1,5 +1,8 @@
 import { NextResponse } from 'next/server';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 const RECORD_ID = 'ff808181a09d98f701a0cf92fd497e82';
 const API_URL = `https://api.restful-api.dev/objects/${RECORD_ID}`;
 
@@ -42,7 +45,7 @@ export async function POST(request) {
           currentWishes = getData.data.wishes;
         }
       }
-    } catch (e) {}
+    } catch (e) { }
 
     const newWish = { id: Date.now(), name: name.trim(), message: message.trim() };
     const updatedWishes = [newWish, ...currentWishes];
